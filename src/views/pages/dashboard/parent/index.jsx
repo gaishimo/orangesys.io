@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
 import Sidebar from 'src/views/components/sidebar';
-import { getCurrentPageName } from 'src/core/dashboard';
+import { getCurrentPageName, getCurrentPageGroup } from 'src/core/dashboard';
 import styles from './index.css';
 
-const DashboardParent = ({ children, pageName }) => (
+const DashboardParent = ({ children, pageName, pageGroup }) => (
   <div className={styles.whole}>
-    <Sidebar pageName={pageName} />
+    <Sidebar pageGroup={pageGroup} />
     <div className={styles.main}>
       <header className={styles.header}>
         {pageName}
@@ -21,11 +21,13 @@ const DashboardParent = ({ children, pageName }) => (
 DashboardParent.propTypes = {
   children: PropTypes.object,
   pageName: PropTypes.string,
+  pageGroup: PropTypes.string,
 };
 
 const mapStateToProps = createSelector(
   getCurrentPageName,
-  (pageName) => ({ pageName }),
+  getCurrentPageGroup,
+  (pageName, pageGroup) => ({ pageName, pageGroup }),
 );
 
 export default connect(mapStateToProps)(DashboardParent);

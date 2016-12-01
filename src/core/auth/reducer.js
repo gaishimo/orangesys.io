@@ -34,6 +34,7 @@ import { SERVER_SETUP_STATUS } from 'src/core/server_setup';
 const AuthState = new Record({
   authenticated: false,
   customerId: null,
+  subscriptionId: null,
   email: null,
   emailVerificationResult: 0,
   needEmailVerification: false,
@@ -139,6 +140,7 @@ export const authReducer = createReducer({
       needEmailVerification: u.providerId === 'firebase' && !u.emailVerified,
       planId: u.planId,
       customerId: u.customerId,
+      subscriptionId: u.subscriptionId,
       sentVerificationEmail: false,
       serverSetup: u.serverSetup,
       signingIn: false,
@@ -194,9 +196,10 @@ export const authReducer = createReducer({
       }),
     })
   ),
-  [paymentFulfilled]: (state, { customerId, planId }) => (
+  [paymentFulfilled]: (state, { customerId, subscriptionId, planId }) => (
     state.merge({
       customerId,
+      subscriptionId,
       planId,
       serverSetup: {
         status: SERVER_SETUP_STATUS.WAIT_STARTING,

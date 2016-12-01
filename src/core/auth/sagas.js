@@ -31,6 +31,7 @@ function payloadForSignInFulfilled(user) {
     planId: user.planId,
     emailVerified: user.emailVerified,
     customerId: user.customerId,
+    subscritionId: user.subscriptionId,
     providerId: user.providerId,
     serverSetup: user.serverSetup,
     telegraf: user.telegraf,

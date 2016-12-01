@@ -17,7 +17,8 @@ import SetupPlan from 'src/views/pages/setup/plan';
 import SetupPayment from 'src/views/pages/setup/payment';
 import SetupServer from 'src/views/pages/setup/server';
 import SetupComplete from 'src/views/pages/setup/complete';
-import Plan from 'src/views/pages/dashboard/plan';
+import Plan from 'src/views/pages/dashboard/plan/index';
+import PlanCancel from 'src/views/pages/dashboard/plan/cancel';
 import Grafana from 'src/views/pages/dashboard/grafana';
 import InfluxDB from 'src/views/pages/dashboard/influxdb';
 
@@ -35,25 +36,6 @@ export const paths = {
   SETUP_COMPLETE: '/setup/complete',
   DASHBOARD: '/dashboard',
 };
-
-// const requireAuth = getState => (
-//   (nextState, replace) => {
-//     if (!isAuthenticated(getState())) {
-//       replace(paths.SIGN_IN);
-//       return;
-//     }
-//     if (needEmailVerification(getState())) {
-//       replace(paths.VERIFICATION_GUIDE);
-//       return;
-//     }
-//     if (needSetupPlan(getState())) {
-//       replace(paths.SETUP_PLAN);
-//     }
-//     if (isNeedServerSetup(getState())) {
-//       replace(paths.SETUP_SERVER);
-//     }
-//   }
-// );
 
 const shouldVerifyEmail = getState => (
   (nextState, replace) => {
@@ -214,6 +196,10 @@ export const getRoutes = getState => (
             indexRoute: {
               component: Plan,
             },
+          },
+          {
+            path: 'plan/cancel',
+            component: PlanCancel,
           },
           {
             path: 'grafana',

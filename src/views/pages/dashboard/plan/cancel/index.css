@@ -1,0 +1,24 @@
+@import '../../../../variables.css';
+
+.whole {
+  padding: 30px 30px;
+  font-size: 0.9rem;
+}
+
+.main {
+  padding: 20px;
+}
+
+.caution {
+  margin-top: 30px;
+  color: var(--dangerColor);
+  font-size: 0.8rem;
+}
+
+.cancel {
+  margin-top: 20px;
+}
+
+.progress {
+  margin-top: 30px;
+}

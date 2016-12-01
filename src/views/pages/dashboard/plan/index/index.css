@@ -1,4 +1,4 @@
-@import '../../../variables.css';
+@import '../../../../variables.css';
 
 .whole {
   padding: 30px 30px;
@@ -19,10 +19,6 @@
   padding: 15px;
 }
 
-.price {
-  margin-right: 3px;
-}
-
 .actions {
-  margin-top: 30px;
+  margin-top: 20px;
 }

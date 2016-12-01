@@ -10,7 +10,6 @@ import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
-import { Card, CardHeader, CardText, CardActions } from 'material-ui/Card';
 import LinearProgress from 'material-ui/LinearProgress';
 import Header from 'src/views/components/header-auth';
 import PlanCard from 'src/views/components/plan-card';

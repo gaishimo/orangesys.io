@@ -28,10 +28,7 @@ const Plan = ({ planId }) => {
                     <TableRow>
                       <TableRowColumn>月額</TableRowColumn>
                       <TableRowColumn>
-                        <strong>
-                          <span className={styles.price}>¥{plan.price}</span>
-                           / 月 (税抜)
-                        </strong>
+                        <strong>{plan.price}</strong>
                       </TableRowColumn>
                     </TableRow>
                     <TableRow>
@@ -54,7 +51,7 @@ const Plan = ({ planId }) => {
               <FlatButton
                 label="プランを解約する"
                 secondary
-                onClick={() => history.replace('/dashboard/plan/cancel')}
+                onClick={() => { history.replace('/dashboard/plan/cancel'); }}
               />
             </div>
           </Col>
